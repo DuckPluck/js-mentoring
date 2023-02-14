@@ -17,22 +17,22 @@ const promiseMaker = function (msg, ms = 1000, switcher = true) {
         resolve(msg);
       }, ms);
     });
-  } else {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        reject(new Error(msg));
-      }, ms);
-    });
   }
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error(msg));
+    }, ms);
+  });
+
 };
 
 
 Promise.myAny = async function ([...args]) {
   return args;
-}
+};
 
-const promise1 = promiseMaker('resolved1' ,1001);
-const promise2 = promiseMaker('resolved2' ,1000);
-const promise3 = promiseMaker('resolved3' ,1002);
+const promise1 = promiseMaker('resolved1', 1001);
+const promise2 = promiseMaker('resolved2', 1000);
+const promise3 = promiseMaker('resolved3', 1002);
 
 Promise.myAny([promise1, promise2, promise3]);

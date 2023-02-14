@@ -1,9 +1,10 @@
 // https://learn.javascript.ru/modules-dynamic-imports
 
 //
-
-
-
-const { name: myName } = { name: "Lydia" };
-
-console.log(name);
+try {
+  let a = [];
+  a.toLowerCase();
+  throw 'lel';
+} catch (error) {
+  console.error(error);
+}
