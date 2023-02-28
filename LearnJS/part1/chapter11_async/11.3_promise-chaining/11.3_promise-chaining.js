@@ -26,10 +26,35 @@ const promise2 = new Promise((resolve, reject) => {
 });                         // Output: 2 (after 1 sec)    4 (after 2 sec)
 
 
+
 // (!) тут бы пример
 // Правильно вызывать `.then()` так, чтобы цепочка не росла вправо.
 // Исключение - когда нам нужно использовать переменные из предыдущих звеньев.
 // Тогда мы можем вызывать `promise.then()` внутри предыдущего `.then()`   =>   `.then(() => { promise.then() })`
+
+
+// Главная причина, почему промисы лучше колбэков, это возможность `.then()` всегда возвращать не-промисный результат, при этом чейнить вызовы.
+// Так происходит из-за того, что метод `.then()` ничего не возвращает лично через return.
+// В него передаются аргументы resolve и reject от ближайшего промиса, которые он запускает, передавая туда результат
+Promise.resolve('test')
+    .then((data) => {
+      console.log(data);                         // Output: 'test'
+      return 'жопа';
+    })
+    .then((data) => {
+      console.log(data, typeof data);            // Output: 'жопа' 'string'
+    })
+    .then(() => {
+      return {
+        then(resolve) {
+          resolve('кек');
+        }
+      };
+    })
+    .then((data) => {
+      console.log(data, typeof data);            // Output: 'кек' 'string'
+    });
+
 
 
 // Существуют 'thenable' объекты. Это объекты с методом `then(resolve, reject) {}`.
@@ -40,7 +65,9 @@ class Thenable {
   }
 
   then(resolve, reject) {
-    setTimeout(() => {resolve(this.num * 2)}, 1000)
+    setTimeout(() => {
+      resolve(this.num * 2);
+    }, 1000);
   }
 }
 
