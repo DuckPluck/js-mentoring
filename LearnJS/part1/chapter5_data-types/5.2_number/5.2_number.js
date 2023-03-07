@@ -109,3 +109,4 @@ function randomInteger(min, max) {
   return Math.trunc(Math.random() * (max + 0.5 - min + 0.5) + min - 0.5);
 }
 console.log(randomInteger(1, 3));
+
