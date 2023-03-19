@@ -27,4 +27,20 @@ console.log(Number.isNaN(NaN), isNaN(NaN));               // Output: true true
 
 // Логическое преобразование
 let example3 = '';
-Boolean(example3);       // Output: false - возвращает true если нет 'пустых' значений
+console.log(Boolean(example3));       // Output: false - возвращает true если нет 'falsy' значений
+console.log(!!example3);              // То же самое
+
+
+/*
+ * falsy значения (все остальные, которых здесь нет - truthy)
+ *
+ * false          (Bool)
+ * 0              (Number)
+ * -0             (Number)
+ * NaN            (Number)
+ * 0n (0x0n)      (BigInt)
+ * '' ("" ``)     (String)
+ * null           (null)
+ * undefined      (undefined)
+ * document.all   (object)
+*/

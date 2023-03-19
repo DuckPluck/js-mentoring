@@ -37,7 +37,7 @@ console.log(
     NaN >= NaN,         // Output: false
 );
 
-// null равен только undefined и null!
+// null нестрого равен только undefined и null!
 console.log(
     null == undefined,   // Output: true
     null === undefined,  // Output: false
@@ -45,11 +45,12 @@ console.log(
     null == null         // Output: true
 );
 
-// При исп. других операторов сравнения (`< > <= >=`)  -  null => 0, а undefined => NaN
+// При исп. других операторов сравнения (`< > <= >=`)  -  null -> 0, а undefined -> NaN
 console.log(
     null >= 0,          // Output: true
     null <= 0,          // Output: true
     undefined >= 0,     // Output: false
+    undefined <= 0,     // Output: false
 );
 
 // ---------------------------------------------------------------------------------------------------------------------
