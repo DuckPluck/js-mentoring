@@ -35,7 +35,7 @@ const binarySearchCycle = (arr, value) => {
     let max = arr.length - 1;
 
     while (min <= max) {
-        let mid = Math.floor((min + max) / 2);
+        const mid = Math.floor((min + max) / 2);
 
         if (arr[mid] === value) {
             return mid;
