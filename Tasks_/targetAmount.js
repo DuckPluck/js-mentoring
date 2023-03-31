@@ -55,6 +55,7 @@ const targetAmountOpt = (arr, target) => {
             max = mid - 1;
         }
     }
+    return 0;
 };
 
 console.time('timer');
