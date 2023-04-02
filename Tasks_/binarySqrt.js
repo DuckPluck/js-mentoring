@@ -39,6 +39,6 @@ console.log(binarySqrt(19));    // Output: 4
 console.log(binarySqrt(16));    // Output: 4
 console.log(binarySqrt(20));    // Output: 4
 console.log(binarySqrt(21));    // Output: 4
-console.log(binarySqrt(624));    // Output: 24
+console.log(binarySqrt(624));   // Output: 24
 
 

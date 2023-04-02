@@ -33,7 +33,6 @@ const targetAmountOpt = (arr, target) => {
     let min = 0;
     let max = arr.length - 1;
 
-
     while (min <= max) {
         const mid = Math.floor((min + max) / 2);
 
@@ -58,7 +57,5 @@ const targetAmountOpt = (arr, target) => {
     return 0;
 };
 
-console.time('timer');
 // console.log(targetAmount(arr, 5));
 // console.log(targetAmountOpt(arr, 5));
-console.timeEnd('timer');
