@@ -11,7 +11,7 @@
 // Добавить метод в вашу сущность getLog() который будет выводить полный лог (сначала последние вызовы - ниже более старые).
 
 
-// --- Конструктор предметов и 4 созданных предмета - milk, bread, potatoes, cheese ---
+// --- Конструктор айтемов и 4 созданных айтема - milk, bread, potatoes, cheese ---
 function Item(name, price) {
   this.name = name;
   this.price = price;
